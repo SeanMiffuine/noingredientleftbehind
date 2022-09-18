@@ -52,7 +52,7 @@ export default function Recipe(props: { state: AppState, ingredients: string[] }
                                 <div key={i}>{e}</div>
                             )
                         }</div>
-                        <div className='recipe-body'>{recipe.split('instructions: ')[1]}</div>
+                        <div className='recipe-body'>{recipe.split('Instructions: ')[1]}</div>
                     </div>
                 }
             </div>

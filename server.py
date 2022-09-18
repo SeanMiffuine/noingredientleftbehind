@@ -34,22 +34,21 @@ class Recipe(BaseModel):
 def create_recipe(recipe: Recipe):
     ingredients = recipe.ingredients
     response = co.generate( 
-        model='5ac071ae-9dee-4d7e-932c-1a20d7df4483-ft', 
-        prompt = "ingredients: " + "\n".join(ingredients) + "\n\ntitle: ", 
+        model='699a8d5b-cd69-4802-b81a-80ad2fd8eaa3-ft',#model='5ac071ae-9dee-4d7e-932c-1a20d7df4483-ft', 
+        prompt = "Ingredients: " + "\n".join(ingredients) + "\nTitle: ", 
         max_tokens=200, 
-        temperature=1, 
+        temperature=0.9, 
         k=0, 
         p=0.75, 
         frequency_penalty=0.1, 
         presence_penalty=0, 
-        stop_sequences=["$SEP$", "title:"], 
+        stop_sequences=["$SEP$", "$END$"], 
         return_likelihoods='NONE')
     text = response.generations[0].text
     lines = text.split('\n')
     title = lines[0]
     recipe = '\n'.join(lines[1:])
-
     
-    return {'title': title, 'recipe': recipe}
+    return {'title': title, 'recipe': recipe, 'full': text}
 
 app.mount("/", SPAStaticFiles(directory="./website/build", html=True), name="app")

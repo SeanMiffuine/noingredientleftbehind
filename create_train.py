@@ -22,7 +22,7 @@ with open('./recipes_raw_nosource_epi.json') as f:
                 continue
 
             ings += ' '.join(sing) + "\n"
-        out += f"Ingredients: {ings}Title: {d['title']}\nInstructions: {d['instructions']}\n$SEP$\n"
+        out += f"Ingredients: {ings}Title: {d['title']}\nInstructions: {d['instructions']}\n$END$\n$SEP$\n"
     
 with open('./out_data.txt', 'w') as f:
     f.write(out)
