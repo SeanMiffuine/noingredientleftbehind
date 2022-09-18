@@ -1,0 +1,85 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.nav {
+  padding: 1rem;
+  font-size: large;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.main-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.tag-line {
+  text-align: center;
+  width: 100%;
+}
+
+.button {
+  padding: 0rem 2rem;
+  height: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  border-color: #36454F;
+  border-style: solid;
+  border-radius: 16px;
+  &:hover {
+    background-color: #36454F;
+    color: #f3e7d3;
+    cursor: pointer;
+  }
+}
+
+.add-ingredient-input {
+  opacity: 0.9;
+  border: none;
+  border-bottom: #36454F;
+  border-bottom-style: solid;
+  background-color: unset;
+  font-size: larger;
+  margin-bottom: 0.5rem;
+  &::marker {
+    color: #36454F;
+  }
+}
+
+.ingredient {
+  border: none;
+  border-bottom: #36454F;
+  border-bottom-style: solid;
+  background-color: unset;
+  font-size: larger;
+  margin-bottom: 0.5rem;
+  &::marker {
+    color: #36454F;
+  }
+}
+
+.recipe {
+  margin-left: 5%;
+  margin-right: 5%;
+  & > div {
+    margin-bottom: 1rem;
+  }
+}
+
+.ingredients {
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-title {
+  font-size: xx-large;
+}
